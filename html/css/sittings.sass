@@ -1,4 +1,5 @@
-$main_color : #D2232C
+$active_color : #D2232C
+$main_color : #000000
 $main_font : "Montserrat"
 
 html
@@ -15,4 +16,9 @@ html
 
 h1, h2, h3, h4, h5, h6
   font-weight: 600
-  
+
+a
+  transition: all .2s ease-in-out
+  color: $main_color
+  &:hover
+    color: $active_color

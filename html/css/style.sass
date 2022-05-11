@@ -1,3 +1,71 @@
 @import "reset.sass"
 @import "../fonts/fonts.css"
 @import "sittings.sass"
+
+.main-header
+  padding: 3rem 0 2rem
+  &_container
+    display: flex
+    align-items: center
+    .logo
+      flex-basis: 270px
+  &_contact
+    flex-grow: 1
+    display: flex
+    justify-content: center
+    column-gap: 3rem
+    &-phone, &-mail
+      position: relative
+      padding-left: 37px
+      &:before
+        content: ''
+        width: 20px
+        height: 20px
+        position: absolute
+        top: 0
+        left: 0
+    &-phone
+      &:before
+        background: url(../img/phone.svg) no-repeat center center / contain
+    &-mail
+      &:before
+        background: url(../img/mail.svg) no-repeat center center / contain
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+    a
+      line-height: 1.2
+      font-weight: 600
+  &_btn
+    &-container
+      flex-basis: 45px
+      a
+        position: relative
+        width: 100%
+        height: 31px
+        display: block
+        &.active
+          span
+            &:first-child, &:last-child
+              top: 50%
+            &:nth-child(2)
+              display: none
+            &:first-child
+              transform: rotate(-45deg)
+            &:last-child
+              transform: rotate(45deg)
+        span
+          width: 100%
+          height: 3px
+          background: $active_color
+          position: absolute
+          left: 0
+          transition: all .2s ease-in-out
+          &:first-child
+            top: 0
+          &:nth-child(2)
+            top: 14px
+          &:last-child
+            top: 28px

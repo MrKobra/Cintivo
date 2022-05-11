@@ -15,4 +15,115 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+html {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+a {
+  transition: all 0.2s ease-in-out;
+  color: #000000;
+}
+a:hover {
+  color: #D2232C;
+}
+
+.main-header {
+  padding: 3rem 0 2rem;
+}
+.main-header_container {
+  display: flex;
+  align-items: center;
+}
+.main-header_container .logo {
+  flex-basis: 270px;
+}
+.main-header_contact {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+.main-header_contact-phone, .main-header_contact-mail {
+  position: relative;
+  padding-left: 37px;
+}
+.main-header_contact-phone:before, .main-header_contact-mail:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main-header_contact-phone:before {
+  background: url(../img/phone.svg) no-repeat center center/contain;
+}
+.main-header_contact-mail:before {
+  background: url(../img/mail.svg) no-repeat center center/contain;
+}
+.main-header_contact ul {
+  margin: 0;
+  padding: 0;
+}
+.main-header_contact ul li {
+  list-style: none;
+}
+.main-header_contact a {
+  line-height: 1.2;
+  font-weight: 600;
+}
+.main-header_btn-container {
+  flex-basis: 45px;
+}
+.main-header_btn-container a {
+  position: relative;
+  width: 100%;
+  height: 31px;
+  display: block;
+}
+.main-header_btn-container a.active span:first-child, .main-header_btn-container a.active span:last-child {
+  top: 50%;
+}
+.main-header_btn-container a.active span:nth-child(2) {
+  display: none;
+}
+.main-header_btn-container a.active span:first-child {
+  transform: rotate(-45deg);
+}
+.main-header_btn-container a.active span:last-child {
+  transform: rotate(45deg);
+}
+.main-header_btn-container a span {
+  width: 100%;
+  height: 3px;
+  background: #D2232C;
+  position: absolute;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+}
+.main-header_btn-container a span:first-child {
+  top: 0;
+}
+.main-header_btn-container a span:nth-child(2) {
+  top: 14px;
+}
+.main-header_btn-container a span:last-child {
+  top: 28px;
+}
+
 /*# sourceMappingURL=style.css.map */
