@@ -22,3 +22,49 @@ a
   color: $main_color
   &:hover
     color: $active_color
+
+.btn
+  min-width: 270px
+  padding: 30px 55px
+  background: $active_color
+  font-size: 1.125rem
+  font-weight: 600
+  color: #ffffff
+  display: inline-block
+  border: 1px solid $active_color
+  transition: all .2s ease-in-out
+  &:hover
+    background: transparent
+    color: $active_color
+    cursor: pointer
+
+.heading
+  h2
+    font-size: 2rem
+    margin: 0
+    text-align: center
+
+input:not([type=submit]), textarea
+  width: 100%
+  height: 63px
+  padding: 1rem 2rem
+  font-size: 1.375rem
+  border: 1px solid #D2D1D1
+  font-weight: 500
+  transition: all .2s ease-in-out
+  &::-moz-placeholder
+    color: #D2D1D1
+    opacity: 1
+  &::-webkit-input-placeholder
+    color: #D2D1D1
+    opacity: 1
+  &:hover
+    border-color: $active_color
+  &:focus
+    border-color: $active_color
+    color: $active_color
+
+textarea
+  height: 285px
+  resize: none
+  font-family: $main_font, sans-serif
