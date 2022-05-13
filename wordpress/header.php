@@ -22,38 +22,38 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'cintivo' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$cintivo_description = get_bloginfo( 'description', 'display' );
-			if ( $cintivo_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $cintivo_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cintivo' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <header class="main-header">
+        <div class="container">
+            <div class="main-header_container">
+                <?php
+                $logo = get_field("header_logo", "options");
+                if($logo): ?>
+                    <div class="logo">
+                        <a href="<?= home_url("/") ?>">
+                            <img src="<?= $logo["url"] ?>" alt="<?= $logo["alt"] ?>">
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <div class="main-header_contact">
+                    <?php if($mail = get_field("e_mail", "options")): ?>
+                        <div class="main-header_contact-mail">
+                            <?= $mail; ?>
+                        </div>
+                    <?php endif;
+                    if($tel = get_field("telephone", "options")): ?>
+                        <div class="main-header_contact-phone">
+                            <?= $tel ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="main-header_btn-container">
+                    <a href="#" id="main-header_btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
