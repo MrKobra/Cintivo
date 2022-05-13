@@ -11,4 +11,7 @@ get_header();
     if(get_field("show_advantages") === "yes")
         get_template_part("template-parts/home/advantages-template");
 
+    if(get_field("show_contact") === "yes")
+        get_template_part("template-parts/home/contact-template");
+
 get_footer();
