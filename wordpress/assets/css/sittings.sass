@@ -1,0 +1,77 @@
+$active_color : #D2232C
+$hover_color : #AF171E
+$click_color : #A41119
+$main_color : #000000
+$main_font : "Montserrat"
+
+html
+  font-size: 16px
+  font-family: $main_font, sans-serif
+
+*
+  box-sizing: border-box
+
+.container
+  width: 1200px
+  padding: 0 15px
+  margin: 0 auto
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 600
+
+a
+  transition: all .2s ease-in-out
+  color: $main_color
+  &:hover
+    color: $hover_color
+  &:active
+    color: $click_color
+
+.btn
+  min-width: 270px
+  padding: 30px 55px
+  background: $active_color
+  font-size: 1.125rem
+  font-weight: 600
+  color: #ffffff
+  display: inline-block
+  border: 1px solid $active_color
+  transition: all .2s ease-in-out
+  &:hover
+    background: $hover_color
+    color: #ffffff
+    cursor: pointer
+  &:active
+    background: $click_color
+    color: #ffffff
+
+.heading
+  h2
+    font-size: 2rem
+    margin: 0
+    text-align: center
+
+input:not([type=submit]), textarea
+  width: 100%
+  height: 63px
+  padding: 1rem 2rem
+  font-size: 1.375rem
+  border: 1px solid #D2D1D1
+  font-weight: 500
+  transition: all .2s ease-in-out
+  &::-moz-placeholder
+    color: #D2D1D1
+    opacity: 1
+  &::-webkit-input-placeholder
+    color: #D2D1D1
+    opacity: 1
+  &:hover
+    border-color: $active_color
+  &:focus
+    border-color: $active_color
+    color: $active_color
+
+textarea
+  height: 285px
+  resize: none
+  font-family: $main_font, sans-serif

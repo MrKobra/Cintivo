@@ -12,6 +12,10 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page();
+}
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -141,13 +145,28 @@ function cintivo_scripts() {
 	wp_enqueue_style( 'cintivo-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'cintivo-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'cintivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', get_template_directory_uri() . '/assets/lib/jquery/jquery.js');
+    wp_enqueue_script( 'jquery' );
+
+    wp_enqueue_script( 'cintivo-popup', get_template_directory_uri() . '/assets/lib/magnific-popup/jquery.magnific-popup.min.js', array(), _S_VERSION );
+
+    wp_enqueue_script( 'cintivo-script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'cintivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cintivo_scripts' );
+
+/**
+ * Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+ */
+add_filter( 'get_the_archive_title', function( $title ){
+    return preg_replace('~^[^:]+: ~', '', $title );
+});
 
 /**
  * Implement the Custom Header feature.
