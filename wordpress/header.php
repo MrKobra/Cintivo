@@ -27,8 +27,7 @@
         <div class="container">
             <div class="main-header_container">
                 <?php
-                $logo = get_field("header_logo", "options");
-                if($logo): ?>
+                if($logo = get_field("header_logo", "options")): ?>
                     <div class="logo">
                         <a href="<?= home_url("/") ?>">
                             <img src="<?= $logo["url"] ?>" alt="<?= $logo["alt"] ?>">
