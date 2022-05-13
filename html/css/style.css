@@ -39,7 +39,10 @@ a {
   color: #000000;
 }
 a:hover {
-  color: #D2232C;
+  color: #AF171E;
+}
+a:active {
+  color: #A41119;
 }
 
 .btn {
@@ -54,9 +57,13 @@ a:hover {
   transition: all 0.2s ease-in-out;
 }
 .btn:hover {
-  background: transparent;
-  color: #D2232C;
+  background: #AF171E;
+  color: #ffffff;
   cursor: pointer;
+}
+.btn:active {
+  background: #A41119;
+  color: #ffffff;
 }
 
 .heading h2 {
@@ -98,6 +105,16 @@ textarea {
 
 .main-header {
   padding: 3rem 0 2rem;
+}
+.main-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
 }
 .main-header_container {
   display: flex;
@@ -146,9 +163,17 @@ textarea {
 }
 .main-header_btn-container a {
   position: relative;
+  z-index: 101;
   width: 100%;
   height: 31px;
   display: block;
+}
+.main-header_btn-container a.active {
+  transition: none;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 45px;
 }
 .main-header_btn-container a.active span:first-child, .main-header_btn-container a.active span:last-child {
   top: 50%;
@@ -180,12 +205,51 @@ textarea {
   top: 28px;
 }
 
+.main-nav {
+  width: 100%;
+  height: 100vh;
+  padding: 3rem 0;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+.main-nav.show {
+  display: flex;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.main-nav.center {
+  justify-content: center;
+}
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+}
+.main-nav ul li {
+  list-style: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .home {
   padding-top: 2.7rem;
 }
 .home-container {
   display: flex;
-  column-gap: 66px;
+  column-gap: 60px;
+}
+.home-gallery {
+  flex-basis: 600px;
+  padding-top: 2px;
+}
+.home-gallery img {
+  max-width: 100%;
 }
 .home-info {
   flex-basis: 540px;
@@ -224,7 +288,11 @@ textarea {
   font-weight: 500;
 }
 .home-info_btn:hover {
-  background: #D2232C;
+  background: #AF171E;
+  color: #ffffff;
+}
+.home-info_btn:active {
+  background: #A41119;
   color: #ffffff;
 }
 .home-info_btn-container {
@@ -548,6 +616,198 @@ textarea {
   width: 177px;
   padding: 0;
   font-size: 0.75rem;
+}
+
+.mfp-content .mfp-close {
+  color: transparent;
+  width: 50px;
+  height: 50px;
+  background: url(../img/close.svg) no-repeat center center;
+}
+
+.mfp-content .popup-window {
+  display: block;
+}
+
+.popup-window {
+  display: none;
+  position: relative;
+  margin: 3rem auto;
+}
+.popup-window .mfp-close {
+  top: 12px;
+  right: 30px;
+}
+.popup-window_btn {
+  padding: 1rem 2.1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+}
+.popup-window_btn.style_1 {
+  background: #D2232C;
+  border: 1px solid #D2232C;
+  color: #ffffff;
+}
+.popup-window_btn.style_2 {
+  border: 1px solid #D2232C;
+  color: #D2232C;
+}
+.popup-window_btn:hover {
+  background: #AF171E;
+  color: #ffffff;
+  cursor: pointer;
+}
+.popup-window_btn:active {
+  background: #A41119;
+  color: #ffffff;
+}
+.popup-window_container {
+  background: #ffffff;
+  padding: 3.75rem 6.25rem 1.5rem;
+}
+.popup-window .heading h2 {
+  text-align: left;
+}
+.popup-window_header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  align-items: flex-end;
+}
+.popup-window_header .popup-window_btn {
+  padding: 1.4rem 2.1rem;
+}
+.popup-window .sub-heading h3 {
+  color: #D2232C;
+  text-transform: uppercase;
+  margin: 0 0 0.3em;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.popup-window .sub-heading span {
+  color: #626262;
+  font-size: 1.375rem;
+  line-height: 1.2;
+}
+.popup-window_product {
+  display: flex;
+  padding-bottom: 2.5rem;
+  column-gap: 3rem;
+}
+.popup-window_product:not(:last-child) {
+  border-bottom: 1px solid #EBD2D2;
+}
+.popup-window_product-info {
+  flex-basis: calc(100% - 165px - 3rem);
+}
+.popup-window_product-img {
+  flex-basis: 165px;
+}
+.popup-window_product-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  margin-top: 3rem;
+  border: 1px solid #EBD2D2;
+  padding: 3.75rem;
+}
+.popup-window_product-header h4 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+.popup-window_product-header span {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: #717171;
+}
+.popup-window_product-content {
+  margin-top: 1.7rem;
+}
+.popup-window_product-content p {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 1rem 0 0;
+}
+.popup-window_product-content p:first-child {
+  margin: 0;
+}
+.popup-window_product-content ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.3rem;
+  column-gap: 0.6rem;
+}
+.popup-window_product-content ul:first-child {
+  margin: 0;
+}
+.popup-window_product-content ul li {
+  list-style: none;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-left: 22px;
+  position: relative;
+}
+.popup-window_product-content ul li:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border: 3px solid #D2232C;
+  position: absolute;
+  top: calc((1.25rem * 1.2 / 2) - 5px);
+  left: 0;
+  border-radius: 50%;
+}
+.popup-window_product-btn {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 2rem;
+}
+.popup-window_product-btn a {
+  min-width: 200px;
+}
+
+.mfp-content .popup-form {
+  display: block;
+}
+
+.popup-form {
+  width: 420px;
+  padding: 30px 50px;
+  margin: 3rem auto;
+  background: #ffffff;
+  display: none;
+  position: relative;
+}
+.popup-form .mfp-close {
+  top: 14px;
+  right: 40px;
+}
+.popup-form h3 {
+  font-size: 1.2rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #EBD2D2;
+  margin: 0 0 2rem;
+}
+.popup-form form p {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.popup-form input:not([type=submit]), .popup-form textarea {
+  font-size: 1rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+}
+.popup-form input[type=submit] {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

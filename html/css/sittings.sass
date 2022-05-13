@@ -1,4 +1,6 @@
 $active_color : #D2232C
+$hover_color : #AF171E
+$click_color : #A41119
 $main_color : #000000
 $main_font : "Montserrat"
 
@@ -21,7 +23,9 @@ a
   transition: all .2s ease-in-out
   color: $main_color
   &:hover
-    color: $active_color
+    color: $hover_color
+  &:active
+    color: $click_color
 
 .btn
   min-width: 270px
@@ -34,9 +38,12 @@ a
   border: 1px solid $active_color
   transition: all .2s ease-in-out
   &:hover
-    background: transparent
-    color: $active_color
+    background: $hover_color
+    color: #ffffff
     cursor: pointer
+  &:active
+    background: $click_color
+    color: #ffffff
 
 .heading
   h2
