@@ -361,9 +361,10 @@
   padding: 6.25rem 0
   &_container
     display: flex
-    align-items: center
+    justify-content: space-between
   &_info
     flex-basis: 270px
+    padding-top: 50px
     .logo
       margin-bottom: 1.2rem
     p
@@ -408,8 +409,9 @@
         &:before
           background: url(../img/map.svg) no-repeat center center / cover
   &_mailing
-    flex: 1 calc(100% - 270px - 255px)
+    flex-basis: 447px
     text-align: center
+    padding-top: 65px
     &-container
       text-align: left
       display: inline-block
@@ -419,19 +421,52 @@
         display: block
         margin-bottom: 1em
     form
-      p
-        display: flex
-        align-items: center
+      display: flex
+      flex-wrap: wrap
+      padding: 0!important
+      .mailpoet
+        &_message
+          flex-basis: 100%
+          font-size: 1rem
+          line-height: 1.2
+          padding: 0!important
+        &_validate
+          &_success, &_error
+            position: static!important
+            transform: none!important
+            margin: 0
+            text-align: left!important
+        &_form_loading
+          display: none !important
+        &_paragraph
+          visibility: visible!important
+          &:not(.last)
+            flex-basis: 270px
+          &.last
+            flex-basis: 177px
       input:not([type=submit])
         height: 42px
-        padding: 0.625rem 1.2rem
+        padding: 0.625rem 1.2rem!important
         font-size: 1rem
-        width: 270px
+        width: 270px!important
       input[type=submit]
         height: 42px
-        width: 177px
-        padding: 0
+        width: 177px!important
+        padding: 0!important
         font-size: 0.75rem
+        background: $active_color
+        font-weight: 600
+        color: #ffffff
+        display: inline-block
+        border: 1px solid $active_color
+        transition: all .2s ease-in-out
+        &:hover
+          background: $hover_color
+          color: #ffffff
+          cursor: pointer
+        &:active
+          background: $click_color
+          color: #ffffff
 
 .mfp-content
   .mfp-close

@@ -535,10 +535,11 @@ textarea {
 }
 .main-footer_container {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 .main-footer_info {
   flex-basis: 270px;
+  padding-top: 50px;
 }
 .main-footer_info .logo {
   margin-bottom: 1.2rem;
@@ -588,8 +589,9 @@ textarea {
   background: url(../img/map.svg) no-repeat center center/cover;
 }
 .main-footer_mailing {
-  flex: 1 calc(100% - 270px - 255px);
+  flex-basis: 447px;
   text-align: center;
+  padding-top: 65px;
 }
 .main-footer_mailing-container {
   text-align: left;
@@ -601,21 +603,61 @@ textarea {
   display: block;
   margin-bottom: 1em;
 }
-.main-footer_mailing form p {
+.main-footer_mailing form {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 !important;
+}
+.main-footer_mailing form .mailpoet_message {
+  flex-basis: 100%;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0 !important;
+}
+.main-footer_mailing form .mailpoet_validate_success, .main-footer_mailing form .mailpoet_validate_error {
+  position: static !important;
+  transform: none !important;
+  margin: 0;
+  text-align: left !important;
+}
+.main-footer_mailing form .mailpoet_form_loading {
+  display: none !important;
+}
+.main-footer_mailing form .mailpoet_paragraph {
+  visibility: visible !important;
+}
+.main-footer_mailing form .mailpoet_paragraph:not(.last) {
+  flex-basis: 270px;
+}
+.main-footer_mailing form .mailpoet_paragraph.last {
+  flex-basis: 177px;
 }
 .main-footer_mailing form input:not([type=submit]) {
   height: 42px;
-  padding: 0.625rem 1.2rem;
+  padding: 0.625rem 1.2rem !important;
   font-size: 1rem;
-  width: 270px;
+  width: 270px !important;
 }
 .main-footer_mailing form input[type=submit] {
   height: 42px;
-  width: 177px;
-  padding: 0;
+  width: 177px !important;
+  padding: 0 !important;
   font-size: 0.75rem;
+  background: #D2232C;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-block;
+  border: 1px solid #D2232C;
+  transition: all 0.2s ease-in-out;
+}
+.main-footer_mailing form input[type=submit]:hover {
+  background: #AF171E;
+  color: #ffffff;
+  cursor: pointer;
+}
+.main-footer_mailing form input[type=submit]:active {
+  background: #A41119;
+  color: #ffffff;
 }
 
 .mfp-content .mfp-close {
