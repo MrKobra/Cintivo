@@ -20,20 +20,25 @@ $(window).on("load", function() {
     })
 
     $('.main-nav a').on("click", function(e){
-        e.preventDefault();
-        let block = $($(this).attr("href"));
-        toggleMenuButton();
-        toggleMenu();
-        setTimeout(function(){
-            let scroll = window.headerOffsetTop;
-            if(Math.round(block.offset().top) > Math.round(window.headerOffsetTop + window.headerOuterHeight)) {
-                fixHeader(true);
-                scroll = Math.round(block.offset().top - $(".main-header").outerHeight()) + 1;
+        let href = $(this).attr("href");
+        if(href.charAt(0) === "#") {
+            e.preventDefault();
+            let block = $(href);
+            if(block.length > 0) {
+                toggleMenuButton();
+                toggleMenu();
+                setTimeout(function () {
+                    let scroll = window.headerOffsetTop;
+                    if (Math.round(block.offset().top) > Math.round(window.headerOffsetTop + window.headerOuterHeight)) {
+                        fixHeader(true);
+                        scroll = Math.round(block.offset().top - $(".main-header").outerHeight()) + 1;
+                    }
+                    $("html, body").animate({
+                        scrollTop: scroll
+                    }, 500);
+                }, 100)
             }
-            $("html, body").animate({
-                scrollTop: scroll
-            }, 500);
-        }, 100)
+        }
     })
 
     $(".open-popup-btn").each(function(){
