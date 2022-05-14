@@ -66,6 +66,30 @@
         </div>
     </footer>
 
+    <?php get_template_part("template-parts/popup-form-template", "", ["id" => "popup-callback", "heading" => "Заказать звонок", "form" => '[contact-form-7 id="83" title="Заказать звонок"]']); ?>
+
+    <?php get_template_part("template-parts/popup-form-template", "", ["id" => "popup-consult", "heading" => "Заказать консультацию", "form" => '[contact-form-7 id="84" title="Заказать консультацию"]']); ?>
+
+    <?php get_template_part("template-parts/popup-form-template", "", ["id" => "popup-product", "heading" => "Заказать набор", "form" => '[contact-form-7 id="95" title="Заказать набор"]']); ?>
+
+    <?php
+    $categories = get_categories( [
+        'taxonomy'     => 'category',
+        'type'         => 'post',
+        'child_of'     => get_field("product_category", "options"),
+        'parent'       => '',
+        'orderby'      => 'name',
+        'order'        => 'ASC',
+        'hide_empty'   => 0,
+    ] );
+
+    if($categories) {
+        foreach ($categories as $cat) {
+            get_template_part("template-parts/popup-product-template", "", ["product_id" => $cat->term_id]);
+        }
+    }
+    ?>
+
 <?php wp_footer(); ?>
 
 </body>

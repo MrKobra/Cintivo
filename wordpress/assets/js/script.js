@@ -42,9 +42,14 @@ $(window).on("load", function() {
     })
 
     $(".open-popup-btn").each(function(){
+        let href = $(this).attr("href");
+        if(href === "#popup-product") {
+            $(href).find("input[name=your-product]").val($(this).data("title"));
+        }
+
         $(this).magnificPopup({
             type: "inline"
-        })
+        });
     })
 })
 
