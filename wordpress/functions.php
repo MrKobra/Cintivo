@@ -53,7 +53,7 @@ function cintivo_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'cintivo' ),
+			'menu' => "Меню",
 		)
 	);
 
@@ -167,6 +167,11 @@ add_action( 'wp_enqueue_scripts', 'cintivo_scripts' );
 add_filter( 'get_the_archive_title', function( $title ){
     return preg_replace('~^[^:]+: ~', '', $title );
 });
+
+/*
+ * Shortcode functions
+ */
+require get_template_directory() . '/inc/shortcode-functions.php';
 
 /**
  * Implement the Custom Header feature.

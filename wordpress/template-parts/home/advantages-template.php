@@ -2,7 +2,7 @@
 $home_id = get_field("home_page", "options");
 ?>
 
-<section class="advantages" <?php if($id = get_field("advantages_id", $home_id)) { echo "id='$id'"; } ?>>
+<section class="advantages" <?php if($id = get_field("advantage_id", $home_id)) { echo "id='$id'"; } ?>>
     <div class="container">
         <?php get_template_part("template-parts/heading-template", "", ["heading" => get_field("advantages_heading", $home_id)]) ?>
         <?php if(get_field("advantages", $home_id)): ?>
