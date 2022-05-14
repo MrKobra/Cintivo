@@ -103,6 +103,24 @@ textarea {
   font-family: "Montserrat", sans-serif;
 }
 
+.wpcf7-form br {
+  display: none;
+}
+.wpcf7-form .wpcf7-spinner {
+  display: none !important;
+}
+.wpcf7-form .wpcf7-not-valid-tip {
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+.wpcf7-form .wpcf7-response-output {
+  border: none !important;
+  font-size: 1rem !important;
+  margin: 1em 0 0 !important;
+  padding: 0 !important;
+  line-height: 1.2;
+}
+
 .main-header {
   padding: 3rem 0 2rem;
 }
@@ -516,6 +534,7 @@ textarea {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  margin: 0;
 }
 .contact-form_info form p span {
   flex-basis: 100%;
@@ -527,6 +546,9 @@ textarea {
 }
 .contact-form_img {
   flex: 1 calc(100% - 570px - 5.625rem);
+}
+.contact-form_img img {
+  max-width: 100%;
 }
 
 .main-footer {
