@@ -56,3 +56,16 @@
             </div>
         </div>
     </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <?php
+            wp_nav_menu( [
+                'theme_location'  => 'menu',
+                'container'       => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'depth'           => 0,
+            ] );
+            ?>
+        </div>
+    </nav>
