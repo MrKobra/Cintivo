@@ -7,6 +7,14 @@ $main_font : "Montserrat"
 html
   font-size: 16px
   font-family: $main_font, sans-serif
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: 14px
+  @media (min-width: 768px) and (max-width: 992px)
+    font-size: 13px
+  @media (min-width: 480px) and (max-width: 768px)
+    font-size: 12px
+  @media (max-width: 480px)
+    font-size: 11px
 
 *
   box-sizing: border-box
@@ -15,6 +23,14 @@ html
   width: 1200px
   padding: 0 15px
   margin: 0 auto
+  @media (min-width: 992px) and (max-width: 1200px)
+    width: 960px
+  @media (min-width: 768px) and (max-width: 992px)
+    width: 720px
+  @media (min-width: 576px) and (max-width: 768px)
+    width: 540px
+  @media (max-width: 576px)
+    width: 100%
 
 h1, h2, h3, h4, h5, h6
   font-weight: 600
@@ -28,8 +44,8 @@ a
     color: $click_color
 
 .btn
-  min-width: 270px
-  padding: 30px 55px
+  min-width: 17rem
+  padding: 2rem 3.5rem
   background: $active_color
   font-size: 1.125rem
   font-weight: 600
@@ -37,6 +53,7 @@ a
   display: inline-block
   border: 1px solid $active_color
   transition: all .2s ease-in-out
+  text-align: center
   &:hover
     background: $hover_color
     color: #ffffff
@@ -53,7 +70,7 @@ a
 
 input:not([type=submit]), textarea
   width: 100%
-  height: 63px
+  height: 4rem
   padding: 1rem 2rem
   font-size: 1.375rem
   border: 1px solid #D2D1D1
@@ -72,7 +89,7 @@ input:not([type=submit]), textarea
     color: $active_color
 
 textarea
-  height: 285px
+  height: 18rem
   resize: none
   font-family: $main_font, sans-serif
 
@@ -90,3 +107,5 @@ textarea
     margin: 1em 0 0 !important
     padding: 0 !important
     line-height: 1.2
+  .hidden-field
+    display: none
