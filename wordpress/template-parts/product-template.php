@@ -16,7 +16,7 @@
         </div>
         <div class="popup-window_product-btn">
             <a href="#popup-product" data-title="<?php the_title(); ?>" class="open-popup-btn popup-window_btn style_1">Заказать набор</a>
-            <a href="#" class="popup-window_btn style_2">Подробнее</a>
+            <a href="<?php the_permalink(); ?>" class="popup-window_btn style_2">Подробнее</a>
         </div>
     </div>
 </div>
