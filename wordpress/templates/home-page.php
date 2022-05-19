@@ -16,9 +16,15 @@ get_header();
                             <a href="#popup-callback" class="open-popup-btn btn">Заказать звонок</a>
                         </div>
                     </div>
-                    <?php if($thumbnail = get_the_post_thumbnail_url()): ?>
+                    <?php if(get_field("gallery")): ?>
                         <div class="home-gallery">
-                            <img src="<?= $thumbnail ?>" alt="Миниатюра">
+                            <?php while(has_sub_field("gallery")):
+                                if($img = get_sub_field("img")): ?>
+                                    <div class="home-gallery_block">
+                                        <img src="<?= $img["url"] ?>" alt="<?= $img["alt"] ?>">
+                                    </div>
+                                <?php endif;
+                            endwhile; ?>
                         </div>
                     <?php endif; ?>
                 </div>
