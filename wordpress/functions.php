@@ -151,6 +151,8 @@ function cintivo_scripts() {
 
     wp_enqueue_script( 'cintivo-popup', get_template_directory_uri() . '/assets/lib/magnific-popup/jquery.magnific-popup.min.js', array(), _S_VERSION );
 
+    wp_enqueue_script( 'cintivo-wow', get_template_directory_uri() . '/assets/lib/wow/wow.min.js', array(), _S_VERSION );
+
     wp_enqueue_script( 'cintivo-script', get_template_directory_uri() . '/assets/js/script.js', array(), _S_VERSION, true );
 
     wp_enqueue_script( 'cintivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

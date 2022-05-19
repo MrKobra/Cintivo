@@ -8,7 +8,7 @@ $home_id = get_field("home_page", "options");
         <?php if(get_field("advantages", $home_id)): ?>
             <div class="advantages-container">
                 <?php while(has_sub_field("advantages", $home_id)): ?>
-                    <div class="advantages-card">
+                    <div class="advantages-card wow animate__fadeIn" data-wow-duration="1s">
                         <?php if($icon = get_sub_field("advantage_icon")): ?>
                             <div class="advantages-icon">
                                 <img src="<?= $icon['url'] ?>" alt="<?= $icon["alt"] ?>">

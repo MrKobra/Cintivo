@@ -1,4 +1,11 @@
 $(window).on("load", function() {
+    let wow = new WOW();
+    wow.init({
+        animateClass: "animate__animated",
+        mobile: false,
+        offset: 300
+    });
+
     window.headerOffsetTop = $(".main-header").offset().top;
     window.headerOuterHeight = $(".main-header").outerHeight();
     window.scrollTop = $(window).scrollTop();

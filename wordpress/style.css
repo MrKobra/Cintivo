@@ -13,5 +13,6 @@ Text Domain: cintivo
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
 @import "assets/lib/magnific-popup/magnific-popup.css";
 @import "assets/css/style.css";

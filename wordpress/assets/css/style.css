@@ -1331,4 +1331,8 @@ textarea {
   margin: 0;
 }
 
+.wow {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */

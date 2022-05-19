@@ -10,14 +10,14 @@ get_header();
         <section class="home" id="home">
             <div class="container">
                 <div class="home-container">
-                    <div class="home-info">
+                    <div class="home-info wow animate__slideInLeft" data-wow-duration="1s">
                         <?php the_content(); ?>
                         <div class="home-info_request">
                             <a href="#popup-callback" class="open-popup-btn btn">Заказать звонок</a>
                         </div>
                     </div>
                     <?php if(get_field("gallery")): ?>
-                        <div class="home-gallery">
+                        <div class="home-gallery wow animate__slideInRight" data-wow-duration="1s">
                             <?php while(has_sub_field("gallery")):
                                 if($img = get_sub_field("img")): ?>
                                     <div class="home-gallery_block">
